@@ -140,9 +140,9 @@ public class PreCadastroPage extends BasePage {
 ## Como Executar os Testes
 
 1. **Clone o repositório**:
-```
-mvn clean test
-```
+    ```
+    mvn clean test
+    ```
 2. **Configurar o caminho do WebDriver**: Edite a classe `WebSetup` com o caminho correto do WebDriver baixado.
     ```java
     System.setProperty("webdriver.chrome.driver", "/caminho/para/seu/chromedriver");
