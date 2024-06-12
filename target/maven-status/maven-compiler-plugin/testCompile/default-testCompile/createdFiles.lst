@@ -1,0 +1,5 @@
+com/example/pages/CadastroPage.class
+com/example/BasePage.class
+com/example/support/WebSetup.class
+com/example/pages/PreCadastroPage.class
+com/example/test/PreCadastroTest.class
