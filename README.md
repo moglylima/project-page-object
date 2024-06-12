@@ -39,22 +39,6 @@ Por se tratar de um ambiente simples, como o foco é apenas há configuração d
 </dependency>
 ```
 4. **Baixar WebDriver**: Baixe o driver correspondente ao navegador que você deseja utilizar(Edge, Chrome ou Firefox).
-
-## Como Executar os Testes
-
-1. **Clone o repositório**:
-```
-```
-2. **Configurar o caminho do WebDriver**: Edite a classe `WebSetup` com o caminho correto do WebDriver baixado.
-    ```java
-    System.setProperty("webdriver.chrome.driver", "/caminho/para/seu/chromedriver");
-    ```
-
-3. **Executar os testes**: Utilize IDE ou linha de comando. 
-
-    **Usando terminal:**
-
-       mvn clean test
     
 ## Estrutura de Classes
 
@@ -115,3 +99,56 @@ public class WebSetup {
     }
 }
 ```
+
+
+### PreCadastroPage
+A classe `PreCadastroPage` contém todos os atributos e métodos necessários para iteração com a página que será testada.
+```java
+package com.example.pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import com.example.BasePage;
+
+public class PreCadastroPage extends BasePage {
+
+    private By inputName = By.xpath("//*[@id=\"form\"]/div/div/div[3]/div/form/input[2]");
+
+    private By inputPassword = By.xpath("//*[@id=\"form\"]/div/div/div[3]/div/form/input[3]");
+
+    private By btnSingUp = By.xpath("//*[@id=\"form\"]/div/div/div[3]/div/form/button");
+
+    public PreCadastroPage(WebDriver driverBrowser) {
+        super(driverBrowser);
+    }
+
+    public void fillInName(String name) {
+        driver.findElement(inputName).sendKeys(name);
+    }
+
+    public void fillInPassword(String password) {
+        driver.findElement(inputPassword).sendKeys(password);
+    }
+
+    public void clickButtonSingUp() {
+        driver.findElement(btnSingUp).click();
+    }
+}
+```
+
+## Como Executar os Testes
+
+1. **Clone o repositório**:
+```
+```
+2. **Configurar o caminho do WebDriver**: Edite a classe `WebSetup` com o caminho correto do WebDriver baixado.
+    ```java
+    System.setProperty("webdriver.chrome.driver", "/caminho/para/seu/chromedriver");
+    ```
+
+3. **Executar os testes**: Utilize IDE ou linha de comando. 
+
+    **Usando terminal:**
+
+       mvn clean test
