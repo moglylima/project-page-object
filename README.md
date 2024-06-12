@@ -141,6 +141,7 @@ public class PreCadastroPage extends BasePage {
 
 1. **Clone o repositório**:
 ```
+mvn clean test
 ```
 2. **Configurar o caminho do WebDriver**: Edite a classe `WebSetup` com o caminho correto do WebDriver baixado.
     ```java
